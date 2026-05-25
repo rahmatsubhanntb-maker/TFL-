@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;750&family=JetBrains+Mono:wght@400;500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "PT Serif", ui-serif, Georgia, serif;
+}
+
+/* Custom Scrollbars to keep the UI super sleek and professional */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EAEAE5;
+  border-left: 1px solid #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1A1A1A;
+  border: 1px solid #EAEAE5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333333;
+}
+
+/* Neo-Brutalist Custom Utilities */
+.neo-card {
+  border: 2px solid #1A1A1A;
+  background-color: #FFFFFF;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+  transition: all 0.15s ease-in-out;
+}
+
+.neo-card-lg {
+  border: 2px solid #1A1A1A;
+  background-color: #FFFFFF;
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 1);
+}
+
+.neo-btn {
+  border: 2px solid #1A1A1A;
+  background-color: #FFFFFF;
+  color: #1A1A1A;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
+  transition: all 0.1s ease;
+}
+
+.neo-btn:hover {
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+}
+
+.neo-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+}
+
+/* Animations for marquee ticker */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom CSS for A4 print-ready sheet rules */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Hide all buttons, navigation panels, sidebars, tips when printing */
+  header, 
+  section:not(:last-child), 
+  button, 
+  form, 
+  nav, 
+  p.print-hide, 
+  div.print-hide,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Make the document preview span across the full page print */
+  main {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  section:last-child {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    overflow: visible !important;
+  }
+
+  /* Target the preview card itself to remove shadow/margins */
+  div.shadow-lg, .neo-card-lg {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+
+/* Global input/form controls overrides for Neo-Brutalist look and feel */
+input[type="text"], input[type="number"], select, textarea {
+  border: 2px solid #1A1A1A !important;
+  background-color: #FFFFFF !important;
+  border-radius: 0px !important;
+  font-family: var(--font-mono) !important;
+  color: #1A1A1A !important;
+  box-shadow: none !important;
+  font-weight: 500 !important;
+  transition: all 0.15s ease-in-out !important;
+  font-size: 11px !important;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus, textarea:focus {
+  outline: none !important;
+  border-color: #000000 !important;
+  background-color: #FDFDFB !important;
+}
+
+label {
+  font-family: var(--font-mono) !important;
+  font-weight: 750 !important;
+  color: #1A1A1A !important;
+  text-transform: uppercase !important;
+  font-size: 9px !important;
+  letter-spacing: 0.05em !important;
+  opacity: 0.8;
+}
+
+/* Tab contents styles override */
+div.bg-slate-50 {
+  background-color: #FFFFFF !important;
+  border: 2px solid #1A1A1A !important;
+  border-radius: 0px !important;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 1) !important;
+}
+div.bg-white {
+  background-color: #FFFFFF !important;
+}
+div.bg-slate-50\/50, div.bg-slate-100 {
+  background-color: #EAEAE5 !important;
+}
+

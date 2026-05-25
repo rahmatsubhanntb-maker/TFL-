@@ -1,0 +1,6 @@
+{
+  "name": "Generator Format Dokumen BSPS",
+  "description": "Sistem digital untuk menginput, mengedit, mempratinjau, dan mencetak seluruh format dokumen administrasi program Bantuan Stimulan Perumahan Swadaya (BSPS) Kabupaten Bima Tahun 2026 secara otomatis dan rapi sesuai format standar kementerian.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
